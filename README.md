@@ -12,7 +12,7 @@ Presentation
 
 ### Abstract
 
-
+![Image of Park Image](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/Park%20image.PNG)
 
 This project aims at collecting metrics pertaining to the activities of a person or a group of people based on sensor observation in the public realm, in order to inform better planning decisions. The application of activity recognition can be used in calculating the time span for human activities in public spaces such as parks. By leveraging the data, stakeholders can enhance the environment as well as the utilization of public facilities including benches, playgrounds, food areas, etc, as well as plan for maintenance, capital improvements and events.
 
@@ -22,7 +22,9 @@ In the ideal case, an activity is recognized regardless of the environment it is
 
 ### Data Pipeline
 
-#### 
+![Image of Data Pipelin](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline.PNG)
+
+#### Machine Learning at Edge
 
 **Camera:**
 - Stream video to the inference engine on the Edge Device
@@ -36,6 +38,8 @@ In the ideal case, an activity is recognized regardless of the environment it is
 
 
 #### Phase 1: Body Part Detection
+
+![Image of Phase1](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/phase1.PNG)
 
 The first task in our pipeline is identifying people and their pose positions.
 
@@ -51,6 +55,8 @@ A crucial limitation of object detection algorithms that they do not tell you if
 
 #### Phase 2: Action Recognition Detection
 
+![Image of Phase2](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/phase2.PNG)
+
 After getting the data from the body part detection and human framing, we got a matrix with 18 key points per frame. In order to recognize the action, we took a window as 9 frame per sequence. We passed the key coordinates and labels from NTU training dataset into the LSTM model. Later I will show you the image frames from the NTU dataset. After training, this model output the predicted labels, and then we test them on our validation and test dataset. Finally, we output the confusion matrix and inference videos to measure the training results. 
 
 
@@ -59,10 +65,13 @@ The bigger the movement of the key point, the larger information it includes. Th
 
 ### Evaluation Results
 
+![Image of Phase2](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/wandb.PNG)
 
 We did grid search and tried different sets of parameters and ended up using image size 368 by 368, IoU is 0.5, area is medium for body part detection, and the layers dimension as 128 by 64, batch size as 96, drop out as 0.2 for LSTM Model. After 100 epochs training, our validation f1 score reached 0.83.
 
 ### Demo
+
+https://user-images.githubusercontent.com/59941969/128452369-641ba77b-cba6-448f-9d87-174bfaf6d7ca.mp4
 
 
 ### Run
