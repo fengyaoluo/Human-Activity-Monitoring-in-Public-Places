@@ -70,6 +70,20 @@ The bigger the movement of the key point, the larger information it includes. Th
 
 We did grid search and tried different sets of parameters and ended up using image size 368 by 368, IoU is 0.5, area is medium for body part detection, and the layers dimension as 128 by 64, batch size as 96, drop out as 0.2 for LSTM Model. After 30 epochs training, our validation f1 score reached 0.83.
 
+```
+              precision    recall  f1-score   support
+
+   drink_eat       0.88      0.73      0.80     13746
+  phone_talk       0.72      0.89      0.80     13319
+      selfie       0.91      0.79      0.85     11297
+   sit_squat       0.80      0.82      0.81      6884
+        walk       0.90      0.93      0.91     12817
+
+    accuracy                           0.83     58063
+   macro avg       0.84      0.83      0.83     58063
+weighted avg       0.84      0.83      0.83     58063
+```
+
 #### Confusion Matrix
 
 ![Image of confusion matrix](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/Confusion%20Matrix.png)
