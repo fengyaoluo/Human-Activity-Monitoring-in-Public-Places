@@ -81,6 +81,14 @@ https://user-images.githubusercontent.com/59941969/128452369-641ba77b-cba6-448f-
 ```
 docker run --runtime nvidia -it --rm --network=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix --device /dev/video0 -v /YOUR_DATA_DIR:/data seancampos/final_proj_trt_pose
 ```
+
+##### To build your own image
+```
+cd docker
+docker build -t final_proj_trt_pose .
+```
+
+
 #### Train Body Pose Model
 
 ```
@@ -91,7 +99,49 @@ unzip val2017.zip
 unzip annotations_trainval2017.zip
 python3 preprocess_coco_person.py annotations/person_keypoints_train2017.json annotations/person_keypoints_train2017_modified.json
 python3 preprocess_coco_person.py annotations/person_keypoints_val2017.json annotations/person_keypoints_val2017_modified.json
-train.py ../tasks/human_pose/experiments/resnet18_baseline_att_224x224_A.json
+train.py ../tasks/human_pose/experiments/resnet18_baseline_att_368x2368_A.json
 ```
+
+#### Evaluate the Body Pose Model
+
+Run `src/eval_body_pose.ipynb` notebook.
+Edit the notebook to change the model checkpoint if necessary.
+
+#### Quantize the Body Pose Model
+
+Run the `src/convert.ipynb` notebook.  
+Edit the notebook to change the model if necessary.
+
+
+#### Label Body Pose Vector on NTU RGB+D Videos
+
+Put videos you wish to label from the NTU RGB+D dataset into folders organized by activity class.
+```
+/data/ntu/sit
+/data/ntu/walk
+...
+```
+Run `src/label_poses.py`
+Edit the script if you wish to change the model, activity classes or LSTM time window.
+
+#### Train the LSTM
+
+Run `src/Train_LSTM.ipynb`
+Edit the script if you wish to change the model, activity classes or LSTM time window.
+
+#### Run inference on a video stream or file
+
+To annotate a video:
+```
+python3 src/inference.py video.mp4
+```
+or to annotate a webcam stream in real-time:
+```
+python3 src/inference.py 0
+```
+
+### Or use our pretrained models
+
+https://drive.google.com/drive/folders/1d3QT6lE4xpZWdylZvfP-jJeHw6XfF0To?usp=sharing
 
 
