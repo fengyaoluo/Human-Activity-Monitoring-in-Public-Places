@@ -22,7 +22,7 @@ In the ideal case, an activity is recognized regardless of the environment it is
 
 ### Data Pipeline
 
-![Image of Data Pipelin](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline.PNG)
+![Image of Data Pipeline](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline.PNG)
 
 #### Machine Learning at Edge
 
@@ -59,6 +59,7 @@ A crucial limitation of object detection algorithms that they do not tell you if
 
 After getting the data from the body part detection and human framing, we got a matrix with 18 key points per frame. In order to recognize the action, we took a window as 9 frame per sequence. We passed the key coordinates and labels from NTU training dataset into the LSTM model. Later I will show you the image frames from the NTU dataset. After training, this model output the predicted labels, and then we test them on our validation and test dataset. Finally, we output the confusion matrix and inference videos to measure the training results. 
 
+![Image of NTU](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/NTU.png)
 
 The bigger the movement of the key point, the larger information it includes. That is how model knows what kind of the change of key points is important when we try to classify actions. 
 
@@ -68,6 +69,10 @@ The bigger the movement of the key point, the larger information it includes. Th
 ![Image of Phase2](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/wandb.PNG)
 
 We did grid search and tried different sets of parameters and ended up using image size 368 by 368, IoU is 0.5, area is medium for body part detection, and the layers dimension as 128 by 64, batch size as 96, drop out as 0.2 for LSTM Model. After 100 epochs training, our validation f1 score reached 0.83.
+
+#### Confusion Matrix
+
+![Image of confusion matrix](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/Confusion%20Matrix.png)
 
 ### Demo
 
