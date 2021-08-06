@@ -22,7 +22,7 @@ In the ideal case, an activity is recognized regardless of the environment it is
 
 ### Data Pipeline
 
-![Image of Data Pipeline](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline.PNG)
+![Image of Data Pipeline](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline%20data.PNG)
 
 #### Machine Learning at Edge
 
