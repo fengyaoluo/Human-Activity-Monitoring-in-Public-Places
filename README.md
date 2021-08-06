@@ -68,7 +68,7 @@ The bigger the movement of the key point, the larger information it includes. Th
 
 ![Image of Phase2](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/wandb.PNG)
 
-We did grid search and tried different sets of parameters and ended up using image size 368 by 368, IoU is 0.5, area is medium for body part detection, and the layers dimension as 128 by 64, batch size as 96, drop out as 0.2 for LSTM Model. After 100 epochs training, our validation f1 score reached 0.83.
+We did grid search and tried different sets of parameters and ended up using image size 368 by 368, IoU is 0.5, area is medium for body part detection, and the layers dimension as 128 by 64, batch size as 96, drop out as 0.2 for LSTM Model. After 30 epochs training, our validation f1 score reached 0.83.
 
 #### Confusion Matrix
 
