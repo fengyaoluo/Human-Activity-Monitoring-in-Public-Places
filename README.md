@@ -2,9 +2,9 @@
 ### Sean Campos, Praveen Reddy Kasireddy, Sam Shih, Fengyao Luo
 Introduing a data pipeline with Deep Learning models to recogining human actions in public places 
 
-Research Paper
+Research Paper [Human Activity Recognition](W251-Grp4-Paper_HumanActivityRecognition.pdf)
 
-Presentation
+Presentation [Human Activity Recognition](W251-Grp4-Presentation_HumanActivityRecognition.pdf)
 
 ### Goal
 - Build an end to end data pipeline to recognize human actions in the public places
