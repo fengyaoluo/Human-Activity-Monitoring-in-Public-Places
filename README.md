@@ -1,6 +1,6 @@
 # Human Activity Recognition in Public Places
 ### Sean Campos, Praveen Reddy Kasireddy, Sam Shih, Fengyao Luo
-Introduing a data pipeline with Deep Learning models to recogining human actions in public places 
+Introduing a data pipeline with Deep Learning models to recognizing human actions in public places 
 
 Research Paper [Human Activity Recognition](W251-Grp4-Paper_HumanActivityRecognition.pdf)
 
@@ -22,7 +22,7 @@ In the ideal case, an activity is recognized regardless of the environment it is
 
 ### Data Pipeline
 
-![Image of Data Pipeline](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/pipeline%20data.PNG)
+![Image of Data Pipeline](https://github.com/fengyaoluo/Human-Activity-Monitoring-in-Public-Places/blob/main/images/data_pipeline.PNG)
 
 #### Machine Learning at Edge
 
