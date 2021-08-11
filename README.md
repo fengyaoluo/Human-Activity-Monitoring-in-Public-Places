@@ -1,6 +1,6 @@
 # Human Activity Recognition in Public Places
 ### Sean Campos, Praveen Reddy Kasireddy, Sam Shih, Fengyao Luo
-Introduing a data pipeline with Deep Learning models to recognizing human actions in public places 
+Introducing a data pipeline with Deep Learning models to recognizing human actions in public places 
 
 Research Paper [Human Activity Recognition](W251-Grp4-Paper_HumanActivityRecognition.pdf)
 
